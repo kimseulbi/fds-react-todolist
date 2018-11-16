@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>중간 프로젝트 템플릿</title>
+  <link rel="stylesheet" href="./index.scss">
+</head>
+
+<body>
+  <template id="login-form">
+    <form action="" class="login-form">
+      <input type="text" name="username">
+      <input type="password" name="password">
+      <button>로그인</button>
+    </form>
+  </template>
+
+  <template id="todo-list">
+    <h1>할 일 목록</h1>
+    <button class="logout">로그아웃</button>
+    <form class="todo-form">
+      <input type="text" name="body">
+      <button>전송</button>
+    </form>
+    <ul class="todo-list"></ul>
+  </template>
+
+  <template id="todo-item">
+    <li class="todo-item">
+      <input type="checkbox" name="complete" class="complete">
+      <span class="body"></span>
+      <button class="delete-button">삭제</button>
+    </li>
+  </template>
+
+  <div class="root"></div>
+  <script src="./index.js"></script>
+</body>
+
+</html>
