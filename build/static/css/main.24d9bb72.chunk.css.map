@@ -1,0 +1,1 @@
+{"version":3,"sources":["/Users/MACpro/Documents/dev/fds-react-todolist/src/styles.css"],"names":[],"mappings":"AACA,KACE,uBAAwB,AACxB,iBAAmB,CACpB,AACD,SACE,eAAiB,CAClB","file":"main.24d9bb72.chunk.css","sourcesContent":["\n.App {\n  font-family: sans-serif;\n  text-align: center;\n}\n.loading {\n  background: gray;\n}\n"]}
