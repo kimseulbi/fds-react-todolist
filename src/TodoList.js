@@ -43,6 +43,10 @@ export default class TodoList extends React.Component {
     const res = await api.get("/todos");
     // 할 일 목록을 화면에 그려주기
     const todos = res.data;
+        if(todos.length > 7) {
+          alert('7개이상 목록을 저장할수 없습니다.')
+          return
+        }
     this.setState({
       todos: todos,
       loading: false
@@ -82,7 +86,7 @@ export default class TodoList extends React.Component {
 
     return <div className={divClass}>
         <h1>{moment(new Date()).format("YYYY-MM-DD")}</h1>
-        <button onClick={e => this.handleLogout(e)}>로그아웃</button>
+        <button className="logout" onClick={e => this.handleLogout(e)}>나가기</button>
         <form onSubmit={e => this.handleSubmit(e)}>
           <input type="text" name="body" />
           <button>추가</button>

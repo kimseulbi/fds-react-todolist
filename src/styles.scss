@@ -203,8 +203,36 @@ body {
   margin: 0 auto;
 }
 
-.TodoList{
+.TodoList {
   width: 450px;
   height: 700px;
   background: url(image/todo-bg.png) no-repeat 0 0;
+  position: relative;
+  h1 {
+    font-size: 2em;
+    font-weight: 700;
+    color: #fff;
+    position: absolute;
+    padding: 2rem 0 2rem 3em;
+  }
+  .logout {
+    position: absolute;
+    top: 1.7rem;
+    right: 1.5rem;
+    font-size: 1.3em;
+    padding: .6em 1em;
+    border-radius:40px;
+    background: #1c88e3;
+    border: 0;
+    color: #fff;
+    font-weight: 500;
+  }
+  form,
+  ul {
+    position: absolute;
+    top: 300px;
+  }
+}
+
+button {
 }
