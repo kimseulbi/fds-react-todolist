@@ -20,17 +20,20 @@ export default class LoginForm extends Component {
     const res = await api.post("/users/login", {
       username,
       password
-    })
-    localStorage.setItem("token",res.data.token);
+    });
+    localStorage.setItem("token", res.data.token);
     this.props.onLogin();
   }
   render() {
     return (
-      <form onSubmit={e => this.handleSubmit(e)}>
-        <input type="text" name="username" />
-        <input type="password" name="password" />
-        <button>전송</button>
-      </form>
+      <section className="login">
+        <form onSubmit={e => this.handleSubmit(e)} className="login-form">
+          <h2 className="tit">Login</h2>
+          <input type="text" name="username" />
+          <input type="password" name="password" />
+          <button>전송</button>
+        </form>
+      </section>
     );
   }
 }

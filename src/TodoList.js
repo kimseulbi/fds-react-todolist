@@ -75,7 +75,8 @@ export default class TodoList extends React.Component {
 
   render() {
     const divClass = classNames({
-      loading: this.state.loading
+      loading: this.state.loading,
+      TodoList
     });
     return (
       <div className={divClass}>

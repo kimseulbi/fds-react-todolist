@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,700");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500");
+
+$main-color: #bbdefa;
+$num-font-family: "Montserrat", sans-serif;
+
+/* .App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.loading {
+  background: gray;
+}
+ */
+
+/* 스타일 초기화*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 1em;
+  /* font를 부모에게 상속 받아라 */
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+main {
+  display: block;
+}
+
+ul {
+  list-style-type: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* 하이퍼링크 스타일 */
+a {
+  color: inherit;
+  text-decoration: none;
+  /* cursor: crosshair; */
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+.main,
+.menu-area,
+.slogan,
+.footer-area {
+  width: 1000px;
+  margin: 0 auto;
+}
+/*  css 모듈
+    가상요소 clearfix 제작
+*/
+.clearfix::after {
+  /* 상자를 만들어주려면 content="" null값 필요  */
+  content: "";
+  display: block;
+  clear: both;
+}
+/* 숨김 콘텐츠 */
+.readable-hidden,
+.skip-nav,
+legend {
+  /* 콘텐츠를 아예 없음*/
+  /* display: none; */
+  /* 화면에서 감춰지지만접근 할수 없음*/
+  /* visibility: hidden; */
+  /* 숨김처리 트릭 화면에서 멀리 보내기*/
+  /* position: relative;
+    left: -9999em; */
+  /* 접근할수 있으면서 화면에서만 안보이게 하는 트릭 */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  margin: -1px;
+  /* 사각형 단위로 짤라내기 */
+  clip: rect(0, 0, 0, 0);
+}
+/* 동적으로 보이도록 처리 */
+.skip-nav:focus {
+  width: 100%;
+  height: auto;
+  padding: 1em;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  clip: rect(auto, auto, auto, auto);
+  z-index: 100;
+}
+
+html {
+  font-size: 10px;
+}
+body {
+  background-color: $main-color;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 1.3rem;
+  height: 100vh;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.TodoList{
+  width: 450px;
+  height: 700px;
+  background: url(image/todo-bg.png) no-repeat 0 0;
+}

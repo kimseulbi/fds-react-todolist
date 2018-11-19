@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import LoginForm from "./LoginForm";
 import TodoList from "./TodoList";
 
-import "./styles.css";
+import "./styles.scss";
 
 class App extends React.Component {
   // 상태 설계
