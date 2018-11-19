@@ -1,6 +1,7 @@
 import React from "react";
 import api from "./api";
 import classNames from "classnames";
+import moment from "moment";
 
 export default class TodoList extends React.Component {
   constructor(props) {
@@ -78,23 +79,22 @@ export default class TodoList extends React.Component {
       loading: this.state.loading,
       TodoList
     });
-    return (
-      <div className={divClass}>
-        <h1>할 일 목록</h1>
+
+    return <div className={divClass}>
+        <h1>{moment(new Date()).format("YYYY-MM-DD")}</h1>
         <button onClick={e => this.handleLogout(e)}>로그아웃</button>
         <form onSubmit={e => this.handleSubmit(e)}>
           <input type="text" name="body" />
           <button>추가</button>
         </form>
         <ul>
-          {this.state.todos.map(todo => (
-            <li key={todo.id}>
+          {this.state.todos.map(todo => <li key={todo.id}>
               {todo.body}
-              <button onClick={e => this.handleDelete(e, todo.id)}>삭제</button>
-            </li>
-          ))}
+              <button onClick={e => this.handleDelete(e, todo.id)}>
+                삭제
+              </button>
+            </li>)}
         </ul>
-      </div>
-    );
+      </div>;
   }
 }
