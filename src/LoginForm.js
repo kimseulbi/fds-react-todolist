@@ -25,14 +25,16 @@ export default class LoginForm extends Component {
     this.props.onLogin();
   }
   render() {
+    const {onRegister} = this.props;
     return (
       <section className="login">
         <form onSubmit={e => this.handleSubmit(e)} className="login-form">
           <h2 className="tit">Login</h2>
           <input type="text" name="username" />
           <input type="password" name="password" />
-          <button>전송</button>
+          <button>로그인</button>
         </form>
+        <button onClick={() => onRegister()}>회원가입</button>
       </section>
     );
   }

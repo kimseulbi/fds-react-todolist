@@ -27,6 +27,7 @@ export default class TodoList extends React.Component {
       loading: false
     });
   }
+
   // 추가 버튼
   async handleSubmit(e) {
     e.preventDefault();
@@ -39,14 +40,10 @@ export default class TodoList extends React.Component {
       body,
       complete: false
     });
-    // 서버에서 할 일 목록 다시 받아오기
     const res = await api.get("/todos");
     // 할 일 목록을 화면에 그려주기
     const todos = res.data;
-        if(todos.length > 7) {
-          alert('7개이상 목록을 저장할수 없습니다.')
-          return
-        }
+    // 서버에서 할 일 목록 다시 받아오기
     this.setState({
       todos: todos,
       loading: false
@@ -57,7 +54,7 @@ export default class TodoList extends React.Component {
     this.setState({
       loading: true
     });
-    // 사바에 할 일 삭제
+    // 서버에 할 일 삭제
     await api.delete("/todos/" + id);
     // 서버에서 할 일 목록 다시 받아오기
     const res = await api.get("/todos");
@@ -72,33 +69,45 @@ export default class TodoList extends React.Component {
   async handleLogout(e) {
     e.preventDefault();
     this.setState({
-      loading:true
-    })
+      loading: true
+    });
     localStorage.removeItem("token");
     this.props.onLogout();
   }
 
   render() {
+    const { todos } = this.state;
     const divClass = classNames({
       loading: this.state.loading,
       TodoList
     });
-
-    return <div className={divClass}>
+    // if (todos.length > 7) {
+    //   alert('7개이상 목록을 저장할수 없습니다.')
+    //   return
+    // }
+    return (
+      // <div className={divClass}>
+      <div className="TodoList bounceInDown">
         <h1>{moment(new Date()).format("YYYY-MM-DD")}</h1>
-        <button className="logout" onClick={e => this.handleLogout(e)}>나가기</button>
+        <button className="logout pulse" onClick={e => this.handleLogout(e)}>
+          나가기
+        </button>
         <form onSubmit={e => this.handleSubmit(e)}>
           <input type="text" name="body" />
           <button>추가</button>
         </form>
         <ul>
-          {this.state.todos.map(todo => <li key={todo.id}>
-              {todo.body}
-              <button onClick={e => this.handleDelete(e, todo.id)}>
-                삭제
-              </button>
-            </li>)}
+          {this.state.todos.map(todo => (
+            <li key={todo.id}>
+              <span>{todo.body}</span>
+              <i
+                className="far fa-trash-alt"
+                onClick={e => this.handleDelete(e, todo.id)}
+              />
+            </li>
+          ))}
         </ul>
-      </div>;
+      </div>
+    );
   }
 }
