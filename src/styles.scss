@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,700");
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,500");
+@import url("https://fonts.googleapis.com/css?family=Hi+Melody&subset=korean");
 
 $main-color: #bbdefa;
 $num-font-family: "Montserrat", sans-serif;
@@ -184,6 +185,11 @@ legend {
   clip: rect(auto, auto, auto, auto);
   z-index: 100;
 }
+input{
+  &:focus{
+    outline: none;
+  }
+}
 
 html {
   font-size: 10px;
@@ -216,6 +222,7 @@ body {
     color: #fff;
     position: absolute;
     padding: 2rem 0 2rem 2em;
+    font-family: $num-font-family;
   }
   .logout {
     position: absolute;
@@ -229,14 +236,21 @@ body {
     color: #fff;
     font-weight: 500;
     cursor: pointer;
-    &:hover{
+    &:hover {
       animation-duration: 1s;
-        animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
     }
   }
   form {
     position: absolute;
     bottom: 0;
+    input {
+      font-size: 1.3em;
+      background: #fff;
+      border-radius: 40px;
+      border: 0;
+      padding: 1em 2rem;
+    }
   }
   ul {
     position: absolute;
@@ -248,10 +262,13 @@ body {
     width: 450px;
     display: flex;
     justify-content: space-between;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
     span {
       color: #1f88e4;
-      font-size: 2rem;
-      font-weight: 500;
+      font-size: 2em;
+      font-weight: 600;
+      font-family: "Hi Melody", cursive;
     }
     i {
       vertical-align: middle;

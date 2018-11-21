@@ -77,28 +77,21 @@ export default class TodoList extends React.Component {
 
   render() {
     const { todos } = this.state;
-    const divClass = classNames({
-      loading: this.state.loading,
-      TodoList
-    });
-    // if (todos.length > 7) {
-    //   alert('7개이상 목록을 저장할수 없습니다.')
-    //   return
-    // }
+    // classNames는 함수로써 모든 타입이 들어올수 있으며 필요한 class명은 문자열로 추가
+    const divClass = classNames(
+      { loading: this.state.loading },
+      "TodoList bounceInDown"
+    );
     return (
-      // <div className={divClass}>
-      <div className="TodoList bounceInDown">
+      <div className={divClass}>
         <h1>{moment(new Date()).format("YYYY-MM-DD")}</h1>
         <button className="logout pulse" onClick={e => this.handleLogout(e)}>
           나가기
         </button>
-        <form onSubmit={e => this.handleSubmit(e)}>
-          <input type="text" name="body" />
-          <button>추가</button>
-        </form>
         <ul>
           {this.state.todos.map(todo => (
-            <li key={todo.id}>
+            <li key={todo.id} className="fadeIn">
+              {/* <input type="checkbox" name="" id=""/> */}
               <span>{todo.body}</span>
               <i
                 className="far fa-trash-alt"
@@ -107,6 +100,10 @@ export default class TodoList extends React.Component {
             </li>
           ))}
         </ul>
+        <form onSubmit={e => this.handleSubmit(e)}>
+          <input type="text" name="body" />
+          <button>추가</button>
+        </form>
       </div>
     );
   }
