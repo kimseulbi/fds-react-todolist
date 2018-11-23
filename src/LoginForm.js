@@ -34,7 +34,6 @@ export default class LoginForm extends Component {
           <input type="password" name="password" />
           <button>로그인</button>
         </form>
-        <button onClick={() => onRegister()}>회원가입</button>
       </section>
     );
   }
