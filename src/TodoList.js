@@ -85,7 +85,10 @@ export default class TodoList extends React.Component {
     return (
       <div className={divClass}>
         <h1>{moment(new Date()).format("YYYY-MM-DD")}</h1>
-        <button className="logout pulse" onClick={e => this.handleLogout(e)}>
+        <button
+          className="logout btn btn-primary"
+          onClick={e => this.handleLogout(e)}
+        >
           나가기
         </button>
         <ul>
@@ -102,7 +105,7 @@ export default class TodoList extends React.Component {
         </ul>
         <form onSubmit={e => this.handleSubmit(e)}>
           <input type="text" name="body" />
-          <button>추가</button>
+          <button className="btn btn-default">추가</button>
         </form>
       </div>
     );
